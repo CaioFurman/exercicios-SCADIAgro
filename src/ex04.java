@@ -93,7 +93,7 @@ public class ex04 {
 
         System.out.println("-------------");
 
-        //D) escrever o texto na ordem inversa
+        //D) escrever o texto na ordem inversa (temporário)
         String textoInverso = new StringBuilder(texto2).reverse().toString();
 
         System.out.println("D) Texto inverso:");
