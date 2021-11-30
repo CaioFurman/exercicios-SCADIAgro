@@ -25,7 +25,7 @@ public class ex02 {
 
         double primeiraFaixa = (1100 * 0.075);
         double segundaFaixa = ((2203.48 - 1100) * 0.09);
-        double terceiraFaixa = ((3305.22 - 2203.48) * 0.12);
+        double terceiraFaixa = ((3305.22 - 2203.49) * 0.12);
         double tetoINSS = 751.99;
         double valorINSS = 0;
 
@@ -41,12 +41,12 @@ public class ex02 {
 
 
         } else if (salario <= 3305.22) {
-            double valorFaixa = ((salario - 2203.48) * 0.12);
+            double valorFaixa = ((salario - 2203.49) * 0.12);
             valorINSS = valorFaixa + primeiraFaixa + segundaFaixa;
 
 
         } else if (salario <= 6433.57) {
-            double valorFaixa = ((salario - 3305.22) * 0.14);
+            double valorFaixa = ((salario - 3305.23) * 0.14);
             valorINSS = valorFaixa + primeiraFaixa + segundaFaixa + terceiraFaixa;
 
         } else if (salario >= 6433.58) {
