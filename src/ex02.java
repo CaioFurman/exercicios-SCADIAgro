@@ -26,7 +26,8 @@ public class ex02 {
         double primeiraFaixa = (1100 * 0.075);
         double segundaFaixa = ((2203.48 - 1100) * 0.09);
         double terceiraFaixa = ((3305.22 - 2203.49) * 0.12);
-        double tetoINSS = 751.99;
+        double quartaFaixa = ((6433.57 - 3305.23) * 0.14);
+        double tetoINSS = (primeiraFaixa + segundaFaixa + terceiraFaixa + quartaFaixa);
         double valorINSS = 0;
 
         System.out.println("Qual o seu salário?");
