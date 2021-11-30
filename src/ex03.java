@@ -29,14 +29,14 @@ public class ex03 {
         System.out.println();
 
         System.out.println("Quantas parcelas?");
-        double quantidadeParcelas = scanner.nextDouble();
+        int quantidadeParcelas = scanner.nextInt();
         System.out.println();
 
         if (quantidadeParcelas > 12) {
             System.out.println("O limite de parcelas é 12.\nPor favor, tente novamente.");
 
         } else {
-           
+
             System.out.format("Valor financiado : %.2f\n", valorFinanciado);
             System.out.println("Nro de parcelas .: " +quantidadeParcelas);
 
