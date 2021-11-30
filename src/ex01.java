@@ -14,7 +14,6 @@ public class ex01 {
 
         System.out.println("Qual o seu salário?");
         double salario = scanner.nextDouble();
-        double tetoINSS = 751.99;
         double valorINSS = 0;
 
         if (salario <= 1100) {
@@ -30,7 +29,7 @@ public class ex01 {
             valorINSS = (salario * 0.14);
 
         } else if (salario >= 6433.58) {
-            valorINSS = tetoINSS;
+            valorINSS = (6433.57 * 0.14);
         }
 
         System.out.format("O valor do INSS é: %.2f", valorINSS);
