@@ -36,8 +36,8 @@ public class ex03 {
             System.out.println("O limite de parcelas é 12.\nPor favor, tente novamente.");
 
         } else {
-            System.out.format("Valor financiado: %.2f\n", valorFinanciado);
-            System.out.format("Nro de parcelas: %.0f\n", quantidadeParcelas);
+            System.out.format("Valor financiado : %.2f\n", valorFinanciado);
+            System.out.format("Nro de parcelas .: %.0f\n", quantidadeParcelas);
 
             System.out.println("-------------------");
             System.out.println("Parcelas");
@@ -53,7 +53,7 @@ public class ex03 {
 
             double valorTotal = valorParcelas * quantidadeParcelas;
 
-            System.out.format("Total .....: %.2f", valorTotal);
+            System.out.format("Total ....: %.2f", valorTotal);
         }
     }
 }
