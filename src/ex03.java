@@ -36,7 +36,6 @@ public class ex03 {
             System.out.println("O limite de parcelas é 12.\nPor favor, tente novamente.");
 
         } else {
-
             System.out.format("Valor financiado: %.2f\n", valorFinanciado);
             System.out.format("Nro de parcelas: %.0f\n", quantidadeParcelas);
 
