@@ -54,7 +54,7 @@ public class ex04 {
             Lapidando cada traço ele eleva a arte, as linhas se encaixam, rimam, ele ilustra a vida, ele também é poeta.
             E por apreço poético, ele que desenha os seus poemas, agora está desenhado em palavras, porque poeta também pode ser poesia.
             
-            - Bia Brandão"""";
+            - Bia Brandão\"""";
 
         int quantidadeCaracteres = texto2.replace("\\s+", "").length();
 
