@@ -24,8 +24,37 @@ public class ex03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Qual o seu salário?");
-        double salario = scanner.nextDouble();
+        System.out.println("Qual o valor financiado?");
+        double valorFinanciado = scanner.nextDouble();
+        System.out.println();
 
+        System.out.println("Quantas parcelas?");
+        double quantidadeParcelas = scanner.nextDouble();
+        System.out.println();
+
+        if (quantidadeParcelas > 12) {
+            System.out.println("O limite de parcelas é 12.\nPor favor, tente novamente.");
+
+        } else {
+
+            System.out.format("Valor financiado: %.2f\n", valorFinanciado);
+            System.out.format("Nro de parcelas: %.0f\n", quantidadeParcelas);
+
+            System.out.println("-------------------");
+            System.out.println("Parcelas");
+            System.out.println("-------------------");
+
+            double valorParcelas = (valorFinanciado / quantidadeParcelas);
+
+            for(int i = 0; i < quantidadeParcelas; i++) {
+                System.out.format("Parcela " +(i + 1)+ " : %.2f\n", valorParcelas);
+            }
+
+            System.out.println("-------------------");
+
+            double valorTotal = valorParcelas * quantidadeParcelas;
+
+            System.out.format("Total .....: %.2f", valorTotal);
+        }
     }
 }

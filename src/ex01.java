@@ -14,33 +14,25 @@ public class ex01 {
 
         System.out.println("Qual o seu salário?");
         double salario = scanner.nextDouble();
+        double tetoINSS = 751.99;
+        double valorINSS = 0;
 
         if (salario <= 1100) {
-            double valorINSS = (salario * 0.075);
-            System.out.println("O valor do INSS é: " + valorINSS);
+            valorINSS = (salario * 0.075);
 
         } else if (salario <= 2203.48) {
-            double valorINSS = (salario * 0.09);
-            System.out.println("O valor do INSS é: " + valorINSS);
+            valorINSS = (salario * 0.09);
 
         } else if (salario <= 3305.22) {
-            double valorINSS = (salario * 0.12);
-            System.out.println("O valor do INSS é: " + valorINSS);
+            valorINSS = (salario * 0.12);
 
         } else if (salario <= 6433.57) {
-            double valorINSS = (salario * 0.14);
-            System.out.println("O valor do INSS é: " + valorINSS);
+            valorINSS = (salario * 0.14);
 
         } else if (salario >= 6433.58) {
-            System.out.println("Por favor insira um salário abaixo de R$6433,58.");
+            valorINSS = tetoINSS;
         }
+
+        System.out.format("O valor do INSS é: %.2f", valorINSS);
     }
 }
-
-//      Código mais limpo exportando o valor ( funcionaria no c# :( )
-
-//      double valorINSS = 0;
-
-//        if (salario <= 1100) {
-//            valorINSS = (salario * 0.075);
-//    }

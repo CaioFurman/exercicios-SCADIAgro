@@ -23,37 +23,37 @@ public class ex02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Declarados no início para facil alteração dos salários
         double primeiraFaixa = (1100 * 0.075);
         double segundaFaixa = ((2203.48 - 1100) * 0.09);
         double terceiraFaixa = ((3305.22 - 2203.48) * 0.12);
+        double tetoINSS = 751.99;
+        double valorINSS = 0;
 
         System.out.println("Qual o seu salário?");
         double salario = scanner.nextDouble();
 
         if (salario <= 1100) {
-            double valorINSS = (salario * 0.075);
-
-            System.out.println("O valor do INSS é: " + valorINSS);
+            valorINSS = (salario * 0.075);
 
         } else if (salario <= 2203.48) {
             double valorFaixa = ((salario - 1100) * 0.09);
-            double valorINSS = valorFaixa + primeiraFaixa;
+            valorINSS = valorFaixa + primeiraFaixa;
 
-            System.out.println("O valor do INSS é: " + valorINSS);
 
         } else if (salario <= 3305.22) {
             double valorFaixa = ((salario - 2203.48) * 0.12);
-            double valorINSS = valorFaixa + primeiraFaixa + segundaFaixa;
+            valorINSS = valorFaixa + primeiraFaixa + segundaFaixa;
 
-            System.out.println("O valor do INSS é: " + valorINSS);
 
-        } else if (salario >= 3305.23) {
+        } else if (salario <= 6433.57) {
             double valorFaixa = ((salario - 3305.22) * 0.14);
-            double valorINSS = valorFaixa + primeiraFaixa + segundaFaixa + terceiraFaixa;
+            valorINSS = valorFaixa + primeiraFaixa + segundaFaixa + terceiraFaixa;
 
-            System.out.println("O valor do INSS é: " + valorINSS);
+        } else if (salario >= 6433.58) {
+            valorINSS = tetoINSS;
 
         }
+
+        System.out.format("O valor do INSS é: %.2f", valorINSS);
     }
 }
