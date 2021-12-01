@@ -109,8 +109,9 @@ public class ex04 {
         System.out.println("E) Texto na ordem inversa:");
 
         String textoInversoPalavras = "";
-        for (int i = palavras.length - 1; i >= 0; i--) {
-            textoInversoPalavras += palavras[i] + " ";
+        for (int i = quantidadePalavras - 1; i >= 0; i--) {
+            String[] palavrasInverso = texto2.replace("0","").split("\\s+");
+            textoInversoPalavras += palavrasInverso[i] + " ";
         }
         System.out.println(textoInversoPalavras);
 
