@@ -94,7 +94,7 @@ public class ex04 {
 
         System.out.println("-------------");
 
-        //D) escrever o texto na ordem inversa
+        //D) Escrever o texto na ordem inversa
         System.out.println("D) Texto inverso:");
 
         String textoInverso = "";
@@ -105,7 +105,7 @@ public class ex04 {
         System.out.println(textoInverso);
         System.out.println("-------------");
 
-        //E) escrever o texto, palavra por palavra na ordem inversa
+        //E) Escrever o texto, palavra por palavra na ordem inversa
         System.out.println("E) Texto na ordem inversa:");
 
         String textoInversoPalavras = "";
