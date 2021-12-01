@@ -46,7 +46,7 @@ public class ex03 {
             BigDecimal diferencaParcelas = valorFinanciado.subtract(valorTotal);
 
             int intQtParcelas = quantidadeParcelas.intValue();
-            int i = 0;
+            int i = 1;
             while(i <= intQtParcelas) {
 
                 i++;
@@ -55,7 +55,7 @@ public class ex03 {
                     valorTotal = valorTotal.add(diferencaParcelas);
 
                 } else {
-                    System.out.format("Parcela " + (i) + " : %.2f\n", valorParcelas);
+                    System.out.format("Parcela " + (i - 1) + " : %.2f\n", valorParcelas);
                 }
             }
 
