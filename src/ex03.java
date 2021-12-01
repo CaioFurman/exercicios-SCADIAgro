@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 //3) Suponhamos que estamos fazendo um empréstimo e gostariamos de fazer um parcelamento em no máximo 12 vezes sem juros.
@@ -25,17 +27,12 @@ public class ex03 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Qual o valor financiado?");
-        double valorFinanciado = scanner.nextDouble();
+        BigDecimal valorFinanciado = scanner.nextBigDecimal();
         System.out.println();
 
         System.out.println("Quantas parcelas?");
-        int quantidadeParcelas = scanner.nextInt();
+        BigDecimal quantidadeParcelas = scanner.nextBigDecimal();
         System.out.println();
-
-        if (quantidadeParcelas > 12) {
-            System.out.println("O limite de parcelas é 12.\nPor favor, tente novamente.");
-
-        } else {
 
             System.out.format("Valor financiado : %.2f\n", valorFinanciado);
             System.out.println("Nro de parcelas .: " +quantidadeParcelas);
@@ -44,20 +41,27 @@ public class ex03 {
             System.out.println("Parcelas");
             System.out.println("-------------------");
 
-            double calculoParcelas = ((valorFinanciado / quantidadeParcelas) * 100);
-            double valorParcelas = calculoParcelas / 100;
+            BigDecimal valorParcelas = valorFinanciado.divide(quantidadeParcelas, 2, RoundingMode.HALF_DOWN);
+            BigDecimal valorTotal = valorParcelas.multiply(quantidadeParcelas);
+            BigDecimal diferenca = valorFinanciado.subtract(valorTotal);
 
+            int intQtParcelas = quantidadeParcelas.intValue();
             int i = 0;
-            while(i != quantidadeParcelas) {
+            while(i <= intQtParcelas) {
+
                 i++;
-                System.out.format("Parcela " +(i)+ " : %.2f\n", valorParcelas);
+                if (!(valorTotal.equals(valorFinanciado) || !(i == intQtParcelas))) {
+                    System.out.format("Parcela " + (i) + " : %.2f\n", valorParcelas.add(diferenca));
+                    valorTotal = valorTotal.add(diferenca);
+
+                } else {
+                    System.out.format("Parcela " + (i) + " : %.2f\n", valorParcelas);
+                }
             }
 
             System.out.println("-------------------");
 
-            double valorTotal = ((calculoParcelas * quantidadeParcelas) / 100);
 
             System.out.format("Total ....: %.2f", valorTotal);
-        }
     }
 }
