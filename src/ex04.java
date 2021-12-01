@@ -54,7 +54,9 @@ public class ex04 {
             Lapidando cada traço ele eleva a arte, as linhas se encaixam, rimam, ele ilustra a vida, ele também é poeta.
             E por apreço poético, ele que desenha os seus poemas, agora está desenhado em palavras, porque poeta também pode ser poesia.
             
-            - Bia Brandão\"""";
+            - Bia Brandão""";
+
+        String[] palavras = texto2.split("\\s+");
 
         //A) Contagem de caracteres
         int quantidadeCaracteres = texto2.replace("\\s+", "").length();
@@ -72,8 +74,7 @@ public class ex04 {
         //C) Cada palavra e o nro de vezes que ela aparece no texto
         System.out.println("C) Cada palavra e a quantidade de vezes que ela aparece no texto:");
 
-        String[] palavras = texto2.split("\\s+");
-        int palavrasRepetidas =1;
+        int palavrasRepetidas = 1;
 
         for(int i = 0; i < palavras.length; i++)
         {
@@ -85,7 +86,7 @@ public class ex04 {
                     palavras[j] = "0";
                 }
             }
-            if (palavras[i] != "0") {
+            if (!(palavras[i].equals("0"))) {
                 System.out.println(palavras[i] + ":" + palavrasRepetidas);
                 palavrasRepetidas = 1;
             }
@@ -93,16 +94,25 @@ public class ex04 {
 
         System.out.println("-------------");
 
-        //D) escrever o texto na ordem inversa (temporário)
-        String textoInverso = new StringBuilder(texto2).reverse().toString();
-
+        //D) escrever o texto na ordem inversa
         System.out.println("D) Texto inverso:");
-        System.out.println(textoInverso);
 
+        String textoInverso = "";
+        for (int i = texto2.length() - 1; i >= 0; i--) {
+            textoInverso += texto2.charAt(i);
+        }
+
+        System.out.println(textoInverso);
         System.out.println("-------------");
 
         //E) escrever o texto, palavra por palavra na ordem inversa
         System.out.println("E) Texto na ordem inversa:");
+
+        String textoInversoPalavras = "";
+        for (int i = palavras.length - 1; i >= 0; i--) {
+            textoInversoPalavras += palavras[i] + " ";
+        }
+        System.out.println(textoInversoPalavras);
 
     }
 }

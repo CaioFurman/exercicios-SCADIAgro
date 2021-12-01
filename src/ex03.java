@@ -43,7 +43,7 @@ public class ex03 {
 
             BigDecimal valorParcelas = valorFinanciado.divide(quantidadeParcelas, 2, RoundingMode.HALF_DOWN);
             BigDecimal valorTotal = valorParcelas.multiply(quantidadeParcelas);
-            BigDecimal diferenca = valorFinanciado.subtract(valorTotal);
+            BigDecimal diferencaParcelas = valorFinanciado.subtract(valorTotal);
 
             int intQtParcelas = quantidadeParcelas.intValue();
             int i = 0;
@@ -51,8 +51,8 @@ public class ex03 {
 
                 i++;
                 if (!(valorTotal.equals(valorFinanciado) || !(i == intQtParcelas))) {
-                    System.out.format("Parcela " + (i) + " : %.2f\n", valorParcelas.add(diferenca));
-                    valorTotal = valorTotal.add(diferenca);
+                    System.out.format("Parcela " + (i) + " : %.2f\n", valorParcelas.add(diferencaParcelas));
+                    valorTotal = valorTotal.add(diferencaParcelas);
 
                 } else {
                     System.out.format("Parcela " + (i) + " : %.2f\n", valorParcelas);
