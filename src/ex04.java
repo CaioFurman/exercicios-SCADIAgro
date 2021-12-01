@@ -44,7 +44,7 @@ public class ex04 {
         }
         System.out.println();
 
-        //A) Contagem de caracteres
+        //Texto teste (temporário)
         String texto2 = """
             É nas manhãs silenciosas
             Quando não tem ninguém perto que ele mostra o que ele é
@@ -56,6 +56,7 @@ public class ex04 {
             
             - Bia Brandão\"""";
 
+        //A) Contagem de caracteres
         int quantidadeCaracteres = texto2.replace("\\s+", "").length();
 
         System.out.println("A) Quantidade de caracteres: "+quantidadeCaracteres);
@@ -92,7 +93,7 @@ public class ex04 {
 
         System.out.println("-------------");
 
-        //D) escrever o texto na ordem inversa
+        //D) escrever o texto na ordem inversa (temporário)
         String textoInverso = new StringBuilder(texto2).reverse().toString();
 
         System.out.println("D) Texto inverso:");
