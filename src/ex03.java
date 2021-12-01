@@ -26,7 +26,7 @@ public class ex03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Qual o valor financiado?");
+        System.out.println("Qual sera o valor financiado?");
         BigDecimal valorFinanciado = scanner.nextBigDecimal();
         System.out.println();
 
