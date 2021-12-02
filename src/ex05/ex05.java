@@ -62,11 +62,11 @@ public class ex05 {
 
             //A) Total de funcionários
             int totalFuncionarios = listaFuncionarios.size();
-            System.out.println("A)O total de funcionários é: " + totalFuncionarios);
+            System.out.println("A) Total de funcionários: " + totalFuncionarios);
             System.out.println("\n-------------");
 
             //B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)
-            System.out.println("B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)");
+            System.out.println("B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão): ");
             System.out.println();
 
             for (int i = 0; i < totalFuncionarios; i++) {
@@ -96,7 +96,7 @@ public class ex05 {
                 listaSalarios[i] = listaFuncionarios.get(i).valorSalario;
             }
             Arrays.sort(listaSalarios);
-            System.out.println("E) Mostrar os dados do Maior e do Menor Salário");
+            System.out.println("E) Mostrar os dados do Maior e do Menor Salário: ");
             System.out.format("\nMenor salário: R$ %.2f", listaSalarios[0]);
             System.out.format("\nMaior salário: R$ %.2f", listaSalarios[listaFuncionarios.size() - 1]);
     }
