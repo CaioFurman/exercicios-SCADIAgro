@@ -79,7 +79,7 @@ public class ex05 {
             System.out.println("-------------");
 
             //C) Soma dos salarios
-            for(int i = 0; i < listaFuncionarios.size(); i++) {
+            for(int i = 0; i < totalFuncionarios; i++) {
                 somaSalario += listaFuncionarios.get(i).valorSalario;
             }
             System.out.format("C) Soma dos salarios: R$ %.2f",somaSalario);
@@ -92,12 +92,12 @@ public class ex05 {
 
             //E) Mostrar os dados do Maior e do Menor Salário
             double[] listaSalarios = new double[totalFuncionarios];
-            for(int i = 0; i < listaFuncionarios.size(); i++) {
+            for(int i = 0; i < totalFuncionarios; i++) {
                 listaSalarios[i] = listaFuncionarios.get(i).valorSalario;
             }
             Arrays.sort(listaSalarios);
             System.out.println("E) Mostrar os dados do Maior e do Menor Salário: ");
             System.out.format("\nMenor salário: R$ %.2f", listaSalarios[0]);
-            System.out.format("\nMaior salário: R$ %.2f", listaSalarios[listaFuncionarios.size() - 1]);
+            System.out.format("\nMaior salário: R$ %.2f", listaSalarios[totalFuncionarios - 1]);
     }
 }
