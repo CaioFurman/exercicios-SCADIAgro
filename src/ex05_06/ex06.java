@@ -45,18 +45,18 @@ public class ex06 {
             System.out.println("\n-------------");
 
             Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
-            listaEncadeada.add(funcionario);
+            listaEncadeada.offer(funcionario);
 
         }
         while (codFuncionario != 0);
 
-        //A) Encadeamento ordenado pelo CodFuncionario
+        //C) Mostrar a lista de funcionários ordenado pelo CodFuncionario usando a lista encadeada
         CodComparar ordemCod = new CodComparar();
         listaEncadeada.sort(ordemCod);
         System.out.println(listaEncadeada);
         System.out.println("\n-------------");
 
-        //B) Encadeamento ordenado pelo Nome
+        //D) Mostrar a lista de funcionários ordenado pelo Nome usando a lista encadeada
         NomeComparar ordemNome = new NomeComparar();
         listaEncadeada.sort(ordemNome);
         System.out.println(listaEncadeada);
