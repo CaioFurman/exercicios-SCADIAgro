@@ -1,4 +1,4 @@
-package ex05;
+package ex05_06;
 //5) Tendo a estrutura de dados abaixo
 
 //CodFuncionario : Inteiro
@@ -56,9 +56,6 @@ public class ex05 {
                 listaFuncionarios.add(funcionario);
 
             } while (codFuncionario != 0);
-
-            LocalDate dataHoje = LocalDate.now();
-
             System.out.println("\n-------------");
 
             //A) Total de funcionários
@@ -67,28 +64,20 @@ public class ex05 {
             System.out.println("\n-------------");
 
             //B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)
-            System.out.println("B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)");
-            System.out.println();
-
-            for (int i = 0; i < totalFuncionarios; i++) {
-                System.out.println(listaFuncionarios.get(i).codFuncionario);
-                System.out.println("Nome: " + listaFuncionarios.get(i).nome);
-                System.out.format("Salário: R$ %.2f", listaFuncionarios.get(i).valorSalario);
-                System.out.println("\nData: " +dataHoje+ " - " + listaFuncionarios.get(i).dataAdmissao);
-                System.out.println();
-            }
-            System.out.println("-------------");
+            System.out.println("B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)\n");
+            System.out.println(listaFuncionarios);
+            System.out.println("\n-------------");
 
             //C) Soma dos salarios
-            for(int i = 0; i < listaFuncionarios.size(); i++) {
-                somaSalario += listaFuncionarios.get(i).valorSalario;
+            for (Funcionario listaFuncionario : listaFuncionarios) {
+                somaSalario += listaFuncionario.valorSalario;
             }
-            System.out.format("C) Soma dos salarios: R$ %.2f",somaSalario);
+            System.out.format("C) Soma dos salários: R$ %.2f",somaSalario);
             System.out.println("\n\n-------------");
 
             //D) Média dos salarios
             double mediaSalario = somaSalario / totalFuncionarios;
-            System.out.format("D) Média dos salarios: R$ %.2f",mediaSalario);
+            System.out.format("D) Média dos salários: R$ %.2f",mediaSalario);
             System.out.println("\n\n-------------");
 
             //E) Mostrar os dados do Maior e do Menor Salário
@@ -97,8 +86,8 @@ public class ex05 {
                 listaSalarios[i] = listaFuncionarios.get(i).valorSalario;
             }
             Arrays.sort(listaSalarios);
-            System.out.println("E) Mostrar os dados do Maior e do Menor Salário");
+            System.out.println("E) Mostrar os dados do Maior e do Menor Salário:");
+            System.out.format("\nMaior salário: R$ %.2f", listaSalarios[totalFuncionarios - 1]);
             System.out.format("\nMenor salário: R$ %.2f", listaSalarios[0]);
-            System.out.format("\nMaior salário: R$ %.2f", listaSalarios[listaFuncionarios.size() - 1]);
     }
 }
