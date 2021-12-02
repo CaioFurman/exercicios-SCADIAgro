@@ -28,6 +28,7 @@ public class ex05 {
         Scanner scanner = new Scanner(System.in);
         int codFuncionario;
         double somaSalario = 0;
+        LocalDate dataHoje = LocalDate.now();
 
             do {
                 System.out.println("Codigo do funcionário: ");
@@ -56,8 +57,6 @@ public class ex05 {
                 listaFuncionarios.add(funcionario);
 
             } while (codFuncionario != 0);
-
-            LocalDate dataHoje = LocalDate.now();
 
             System.out.println("\n-------------");
 
