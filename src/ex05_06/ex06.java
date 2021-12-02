@@ -1,8 +1,4 @@
-package ex05_06;//6) Transforme o exercicio 5 usando uma lista duplamente encadeada (que seja possível navegar entre os registro em ambos os sentidos), com as seguintes caracteristicas :
-//a) Encadeamento ordenado pelo CodFuncionario
-//b) Encadeamento ordenado pelo Nome
-//c) Mostrar a lista de funcionários ordenado pelo CodFuncionario usando a lista encadeada
-//d) Mostrar a lista de funcionários ordenado pelo Nome usando a lista encadeada
+package ex05_06;
 
 //6) Transforme o exercicio 5 usando uma lista duplamente encadeada (que seja possível navegar entre os registro em ambos os sentidos - próximo e anterior), com as seguintes caracteristicas :
 //a) Encadeamento ordenado pelo CodFuncionario
@@ -10,21 +6,25 @@ package ex05_06;//6) Transforme o exercicio 5 usando uma lista duplamente encade
 //c) Mostrar a lista de funcionários ordenado pelo CodFuncionario usando a lista encadeada
 //d) Mostrar a lista de funcionários ordenado pelo Nome usando a lista encadeada
 
+import ex05_06.Funcionario.CodComparar;
+import ex05_06.Funcionario.NomeComparar;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class ex06 {
     public static void main(String[] args) {
-        ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
+
+        LinkedList<Funcionario> listaEncadeada = new LinkedList<>();
+
         Scanner scanner = new Scanner(System.in);
         int codFuncionario;
 
         do {
             System.out.println("Codigo do funcionário: ");
             codFuncionario = scanner.nextInt();
-            if (codFuncionario == 0){
+            if (codFuncionario == 0) {
                 break;
             }
             scanner.nextLine();
@@ -45,8 +45,22 @@ public class ex06 {
             System.out.println("\n-------------");
 
             Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
-            listaFuncionarios.add(funcionario);
+            listaEncadeada.add(funcionario);
 
-        } while (codFuncionario != 0);
+        }
+        while (codFuncionario != 0);
+
+        //A) Encadeamento ordenado pelo CodFuncionario
+        CodComparar ordemCod = new CodComparar();
+        listaEncadeada.sort(ordemCod);
+        System.out.println(listaEncadeada);
+        System.out.println("\n-------------");
+
+        //B) Encadeamento ordenado pelo Nome
+        NomeComparar ordemNome = new NomeComparar();
+        listaEncadeada.sort(ordemNome);
+        System.out.println(listaEncadeada);
+        System.out.println("\n-------------");
+
     }
 }
