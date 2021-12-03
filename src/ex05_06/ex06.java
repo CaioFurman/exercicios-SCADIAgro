@@ -52,7 +52,6 @@ public class ex06 {
 
         }
         while (codFuncionario != 0);
-        Iterator<Funcionario> iterador = listaEncadeada.iterator();
         System.out.println(linha);
 
         //A) Total de funcionários
@@ -62,6 +61,7 @@ public class ex06 {
 
         //B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)
         System.out.println("B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)");
+        Iterator<Funcionario> iterador = listaEncadeada.iterator();
         while (iterador.hasNext()){
             System.out.print(iterador.next());
         }
@@ -93,13 +93,19 @@ public class ex06 {
         //6- AC) Mostrar a lista de funcionários ordenado pelo CodFuncionario usando a lista encadeada
         CodComparar ordemCod = new CodComparar();
         listaEncadeada.sort(ordemCod);
-        System.out.println(listaEncadeada);
+        Iterator<Funcionario> iteradorCod = listaEncadeada.iterator();
+        while (iteradorCod.hasNext()){
+            System.out.print(iteradorCod.next());
+        }
         System.out.println(linha);
 
         //6- BD) Mostrar a lista de funcionários ordenado pelo Nome usando a lista encadeada
         NomeComparar ordemNome = new NomeComparar();
         listaEncadeada.sort(ordemNome);
-        System.out.println(listaEncadeada);
+        Iterator<Funcionario> iteradorNome = listaEncadeada.iterator();
+        while (iteradorNome.hasNext()){
+            System.out.print(iteradorNome.next());
+        }
         System.out.println(linha);
 
     }
