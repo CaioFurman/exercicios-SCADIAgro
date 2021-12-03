@@ -81,7 +81,7 @@ public class ex06 {
 
         //E) Mostrar os dados do Maior e do Menor Salário
         double[] listaSalarios = new double[totalFuncionarios];
-        for(int i = 0; i < listaEncadeada.size(); i++) {
+        for(int i = 0; i < totalFuncionarios; i++) {
             listaSalarios[i] = listaEncadeada.get(i).valorSalario;
         }
         Arrays.sort(listaSalarios);
