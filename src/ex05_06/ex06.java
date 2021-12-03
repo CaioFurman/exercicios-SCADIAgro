@@ -54,6 +54,8 @@ public class ex06 {
         while (codFuncionario != 0);
         System.out.println(linha);
 
+        //Exercício 5
+
         //A) Total de funcionários
         int totalFuncionarios = listaEncadeada.size();
         System.out.println("5 - A)O total de funcionários é: " + totalFuncionarios);
@@ -89,6 +91,7 @@ public class ex06 {
         System.out.format("\nMaior salário: R$ %.2f", listaSalarios[totalFuncionarios - 1]);
         System.out.format("\nMenor salário: R$ %.2f", listaSalarios[0]);
         System.out.println("\n" + linha);
+
         //Exercício 6
 
         // AC) Mostrar a lista de funcionários ordenado pelo CodFuncionario usando a lista encadeada
@@ -101,7 +104,7 @@ public class ex06 {
         }
         System.out.println(linha);
 
-        //6- BD) Mostrar a lista de funcionários ordenado pelo Nome usando a lista encadeada
+        //BD) Mostrar a lista de funcionários ordenado pelo Nome usando a lista encadeada
         System.out.println("6 - BD) Mostrar a lista de funcionários ordenado pelo Nome usando a lista encadeada:");
         NomeComparar ordemNome = new NomeComparar();
         listaEncadeada.sort(ordemNome);
