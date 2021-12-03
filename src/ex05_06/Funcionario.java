@@ -36,10 +36,6 @@ public class Funcionario {
             return nome;
         }
 
-        public double getValorSalario(){
-            return valorSalario;
-        }
-
         public static class CodComparar implements Comparator<Funcionario> {
             @Override
             public int compare(Funcionario f1, Funcionario f2)
@@ -55,4 +51,5 @@ public class Funcionario {
                 return f1.getNome().compareTo(f2.getNome());
             }
         }
+
 }
