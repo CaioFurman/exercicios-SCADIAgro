@@ -27,10 +27,6 @@ public class Funcionario implements Serializable {
             return ChronoUnit.DAYS.between(this.dataAdmissao, dataHoje);
         }
 
-        //public String toString(){
-          //  return "Código: "+codFuncionario+"\nNome: "+nome+"\nSalário: "+valorSalario+"\nDias de empresa: "+diasEmpresa()+" dias\n-------------\n";
-        //}
-
         public int getCodFuncionario(){
             return codFuncionario;
         }
@@ -57,15 +53,6 @@ public class Funcionario implements Serializable {
 
 
     public String toString() {
-        //buffer.append("Código: ").append(codFuncionario);
-        //buffer.append("\n");
-        //buffer.append("Nome: ").append(nome);
-        //buffer.append("\n");
-        //buffer.append("Salário: R$").append(valorSalario);
-        //buffer.append("\n");
-        //buffer.append("Tempo de empresa: ").append(diasEmpresa()).append(" dias");
-        //buffer.append("\n");
-
         String stringSalario = (String.format("%013.2f", valorSalario));
         stringSalario = stringSalario.replace(",",".");
         StringBuffer buffer = new StringBuffer();
