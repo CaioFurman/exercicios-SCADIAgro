@@ -1,11 +1,18 @@
 package ex05_06;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Funcionario implements Serializable {
+
+        public static String path = "./src/ex05_06/funcionario.dat";
+        public static String separador = " / ";
 
         int codFuncionario;
         String nome;
@@ -54,16 +61,33 @@ public class Funcionario implements Serializable {
 
 
     public String toString() {
+        //buffer.append("Código: ").append(codFuncionario);
+        //buffer.append("\n");
+        //buffer.append("Nome: ").append(nome);
+        //buffer.append("\n");
+        //buffer.append("Salário: R$").append(valorSalario);
+        //buffer.append("\n");
+        //buffer.append("Tempo de empresa: ").append(diasEmpresa()).append(" dias");
+        //buffer.append("\n");
+
         StringBuffer buffer = new StringBuffer();
-        buffer.append("Código: ").append(codFuncionario);
-        buffer.append("\n");
-        buffer.append("Nome: ").append(nome);
-        buffer.append("\n");
-        buffer.append("Salário: R$").append(valorSalario);
-        buffer.append("\n");
-        buffer.append("Tempo de empresa: ").append(diasEmpresa()).append(" dias");
-        buffer.append("\n");
+        buffer.append(codFuncionario).append(separador);
+        buffer.append(nome).append(separador);
+        buffer.append(valorSalario).append(separador);
+        buffer.append(diasEmpresa()).append("\n");;
 
         return buffer.toString();
+    }
+
+    public static LinkedList<Funcionario> LerFuncionario(String path) throws FileNotFoundException {
+            File f = new File(path);
+            Scanner s = new Scanner(f);
+
+            LinkedList<Funcionario> listaFuncionarios = new LinkedList<Funcionario>();
+            while(s.hasNextLine()){
+                String linha = s.nextLine();
+                String[] dados = linha.split(separador);
+            }
+        return null;
     }
 }
