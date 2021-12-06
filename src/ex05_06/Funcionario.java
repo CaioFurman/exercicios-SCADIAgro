@@ -1,11 +1,11 @@
 package ex05_06;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Comparator;
 
-public class Funcionario {
-
+public class Funcionario implements Serializable {
 
         int codFuncionario;
         String nome;
@@ -24,9 +24,9 @@ public class Funcionario {
             return ChronoUnit.DAYS.between(this.dataAdmissao, dataHoje);
         }
 
-        public String toString(){
-            return "\n"+codFuncionario+"\nNome: "+nome+"\nSalário: "+valorSalario+"\nDias de empresa: "+diasEmpresa()+" dias\n";
-        }
+        //public String toString(){
+          //  return "Código: "+codFuncionario+"\nNome: "+nome+"\nSalário: "+valorSalario+"\nDias de empresa: "+diasEmpresa()+" dias\n-------------\n";
+        //}
 
         public int getCodFuncionario(){
             return codFuncionario;
@@ -52,4 +52,18 @@ public class Funcionario {
             }
         }
 
+
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("Código: ").append(codFuncionario);
+        buffer.append("\n");
+        buffer.append("Nome: ").append(nome);
+        buffer.append("\n");
+        buffer.append("Salário: R$").append(valorSalario);
+        buffer.append("\n");
+        buffer.append("Tempo de empresa: ").append(diasEmpresa()).append(" dias");
+        buffer.append("\n");
+
+        return buffer.toString();
+    }
 }
