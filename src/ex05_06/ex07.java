@@ -17,8 +17,6 @@ package ex05_06;
 //- indexada pelo CodFuncionario
 //- indexada pelo Nome
 
-
-
 import static ex05_06.LeitorDados.LerFuncionario;
 import static ex05_06.LeitorDados.LerFuncionarioCod;
 import static ex05_06.LeitorDados.LerFuncionarioNome;
@@ -63,16 +61,18 @@ public class ex07 {
                 double valorSalario = scanner.nextDouble();
                 scanner.nextLine();
 
-                System.out.println("\nData de Admissão: (dd/MM/yyyy)");
+
+                System.out.println("\nData de Admissão: (yyyy-MM-dd)");
                 String dataInput = scanner.nextLine();
 
-                DateTimeFormatter dataFormato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                DateTimeFormatter dataFormato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate dataAdmissao = LocalDate.parse(dataInput, dataFormato);
 
                 System.out.println(linha);
 
                 Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
                 listaEncadeada.offer(funcionario);
+
 
                 //SEM INDEXAÇÃO
 

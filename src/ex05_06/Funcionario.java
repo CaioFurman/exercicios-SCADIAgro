@@ -1,13 +1,9 @@
 package ex05_06;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.Scanner;
 
 public class Funcionario implements Serializable {
 
@@ -70,11 +66,13 @@ public class Funcionario implements Serializable {
         //buffer.append("Tempo de empresa: ").append(diasEmpresa()).append(" dias");
         //buffer.append("\n");
 
+        String stringSalario = (String.format("%013.2f", valorSalario));
+        stringSalario = stringSalario.replace(",",".");
         StringBuffer buffer = new StringBuffer();
         buffer.append(codFuncionario).append(separador);
         buffer.append(nome).append(separador);
-        buffer.append(valorSalario).append(separador);
-        buffer.append(diasEmpresa()).append("\n");;
+        buffer.append(stringSalario).append(separador);
+        buffer.append(dataAdmissao).append("\n");;
 
         return buffer.toString();
     }
