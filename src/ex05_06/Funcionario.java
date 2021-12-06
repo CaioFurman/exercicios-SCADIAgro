@@ -78,16 +78,4 @@ public class Funcionario implements Serializable {
 
         return buffer.toString();
     }
-
-    public static LinkedList<Funcionario> LerFuncionario(String path) throws FileNotFoundException {
-            File f = new File(path);
-            Scanner s = new Scanner(f);
-
-            LinkedList<Funcionario> listaFuncionarios = new LinkedList<Funcionario>();
-            while(s.hasNextLine()){
-                String linha = s.nextLine();
-                String[] dados = linha.split(separador);
-            }
-        return null;
-    }
 }
