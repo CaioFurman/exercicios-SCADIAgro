@@ -87,19 +87,11 @@ public class ex07 {
 
         //B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)
         System.out.println("5 - B) Lista completa de funcionários mostrando o tempo de empresa de cada um deles (Data Atual - Data de Admissão)\n");
-        try {
-           f = (Funcionario) is.readObject();
-            System.out.println(f);
-            while ((f = (Funcionario) is.readObject()) != null) {
-                System.out.println(f);
-            }
-
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-
+        ListIterator<Funcionario> iterador = listaEncadeada.listIterator();
+        while (iterador.hasNext()){
+            System.out.print(iterador.next());
         }
-        is.close();
-        System.out.println("-------------");
+        System.out.println(linha);
 
         //C) Soma dos salarios
         for (Funcionario funcionario : listaEncadeada) {
@@ -147,7 +139,26 @@ public class ex07 {
         System.out.println(linha);
 
         //Exercício 7
+        System.out.println("7 - C) fazer a listagem dos dados dos clientes:");
+        System.out.println("Sem indexação:");
+        try {
+            f = (Funcionario) is.readObject();
+            System.out.println(f);
+            while ((f = (Funcionario) is.readObject()) != null) {
+                System.out.println(f);
+            }
 
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
 
+        }
+        is.close();
+        System.out.println(linha);
+
+        System.out.println("Indexação pelo código:");
+        System.out.println(linha);
+
+        System.out.println("Indexação pelo nome:");
+        System.out.println(linha);
     }
 }
