@@ -4,14 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class LeitorDados {
     public static String pathDefault = "./src/ex05_06/funcionario.dat";
     public static String pathCod = "./src/ex05_06/funcionario_idx01.idx";
     public static String pathNome = "./src/ex05_06/funcionario_idx02.idx";
-    public static LocalDate dataHoje = LocalDate.now();
     public static DateTimeFormatter dataFormato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public static ListaEncadeada LerFuncionario(String pathDefault) throws FileNotFoundException {
@@ -28,22 +26,13 @@ public class LeitorDados {
             dados[2] = linha.substring(106, 122);
             dados[3] = linha.substring(122, 132);
 
-            int Codigo = Integer.parseInt(dados[0]);
-            String Nome = dados[1].trim();
-
-            double salarioD = Double.parseDouble(dados[2]);
-            String Salario = String.format("%.2f", salarioD);
-
-            LocalDate dataAdmissao = LocalDate.parse(dados[3], dataFormato);
-            long diasEmpresa =  ChronoUnit.DAYS.between(dataAdmissao, dataHoje);
-
-            int codFuncionario = Codigo;
-            String nome = Nome;
+            int codFuncionario = Integer.parseInt(dados[0]);
+            String nome = dados[1];
             double valorSalario = Double.parseDouble(dados[2]);
+            LocalDate dataAdmissao = LocalDate.parse(dados[3], dataFormato);
 
             Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
             listaFuncionarios.Adicionar(funcionario);
-
         }
         listaFuncionarios.Imprimir();
         return listaFuncionarios;
@@ -63,27 +52,14 @@ public class LeitorDados {
             dados[2] = linha.substring(106, 122);
             dados[3] = linha.substring(122, 132);
 
-            int Codigo = Integer.parseInt(dados[0]);
-            String Nome = dados[1].trim();
-
-            double salarioD = Double.parseDouble(dados[2]);
-            String Salario = String.format("%.2f", salarioD);
-
-            LocalDate dataAdmissao = LocalDate.parse(dados[3], dataFormato);
-            long diasEmpresa =  ChronoUnit.DAYS.between(dataAdmissao, dataHoje);
-
-            System.out.println("Código: " +Codigo);
-            System.out.println("Nome: " +Nome);
-            System.out.println("Salário: R$" +Salario);
-            System.out.println("Tempo de empresa: " +diasEmpresa+ " dias");
-            System.out.println();
-
             int codFuncionario = Integer.parseInt(dados[0]);
             String nome = dados[1];
             double valorSalario = Double.parseDouble(dados[2]);
+            LocalDate dataAdmissao = LocalDate.parse(dados[3], dataFormato);
 
             Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
             listaFuncionarios.Adicionar(funcionario);
+
         }
         return listaFuncionarios;
     }
@@ -102,24 +78,10 @@ public class LeitorDados {
             dados[2] = linha.substring(106, 122);
             dados[3] = linha.substring(122, 132);
 
-            int Codigo = Integer.parseInt(dados[0]);
-            String Nome = dados[1].trim();
-
-            double salarioD = Double.parseDouble(dados[2]);
-            String Salario = String.format("%.2f", salarioD);
-
-            LocalDate dataAdmissao = LocalDate.parse(dados[3], dataFormato);
-            long diasEmpresa =  ChronoUnit.DAYS.between(dataAdmissao, dataHoje);
-
-            System.out.println("Código: " +Codigo);
-            System.out.println("Nome: " +Nome);
-            System.out.println("Salário: R$" +Salario);
-            System.out.println("Tempo de empresa: " +diasEmpresa+ " dias");
-            System.out.println();
-
             int codFuncionario = Integer.parseInt(dados[0]);
             String nome = dados[1];
             double valorSalario = Double.parseDouble(dados[2]);
+            LocalDate dataAdmissao = LocalDate.parse(dados[3], dataFormato);
 
             Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
             listaFuncionarios.Adicionar(funcionario);
