@@ -5,16 +5,12 @@ import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class LeitorDados {
     public static String pathDefault = "./src/ex05_06/funcionario.dat";
     public static String pathCod = "./src/ex05_06/funcionario_idx01.idx";
     public static String pathNome = "./src/ex05_06/funcionario_idx02.idx";
-    public static String pathteste = "./src/ex05_06/teste.dat";
-    public static String separador = " / ";
     public static LocalDate dataHoje = LocalDate.now();
     public static DateTimeFormatter dataFormato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 

@@ -20,10 +20,6 @@ public class Funcionario implements Serializable {
             this.dataAdmissao = dataAdmissao;
         }
 
-        public long diasEmpresa(){
-            return ChronoUnit.DAYS.between(this.dataAdmissao, dataHoje);
-        }
-
         public int getCodFuncionario(){
             return codFuncionario;
         }

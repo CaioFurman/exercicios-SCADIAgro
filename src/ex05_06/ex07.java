@@ -21,14 +21,12 @@ import static ex05_06.LeitorDados.LerFuncionario;
 import static ex05_06.LeitorDados.LerFuncionarioCod;
 import static ex05_06.LeitorDados.LerFuncionarioNome;
 
-import ex05_06.Funcionario.CodComparar;
-import ex05_06.Funcionario.NomeComparar;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.LinkedList;
-import java.util.ListIterator;
+
 import java.util.Scanner;
 
 public class ex07 {
