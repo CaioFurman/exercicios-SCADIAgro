@@ -37,19 +37,15 @@ public class LeitorDados {
             LocalDate dataAdmissao = LocalDate.parse(dados[3], dataFormato);
             long diasEmpresa =  ChronoUnit.DAYS.between(dataAdmissao, dataHoje);
 
-            System.out.println("Código: " +Codigo);
-            System.out.println("Nome: " +Nome);
-            System.out.println("Salário: R$" +Salario);
-            System.out.println("Tempo de empresa: " +diasEmpresa+ " dias");
-            System.out.println();
-
-            int codFuncionario = Integer.parseInt(dados[0]);
-            String nome = dados[1];
+            int codFuncionario = Codigo;
+            String nome = Nome;
             double valorSalario = Double.parseDouble(dados[2]);
 
             Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
             listaFuncionarios.Adicionar(funcionario);
+
         }
+        listaFuncionarios.Imprimir();
         return listaFuncionarios;
     }
 
@@ -130,4 +126,5 @@ public class LeitorDados {
         }
         return listaFuncionarios;
     }
+
 }

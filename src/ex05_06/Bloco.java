@@ -1,5 +1,7 @@
 package ex05_06;
 
+import java.lang.constant.Constable;
+
 public class Bloco {
         private Funcionario funcionario;
         private Bloco next, prev;
@@ -7,8 +9,17 @@ public class Bloco {
         public Bloco(Funcionario funcionario) {
             this.funcionario = funcionario;
         }
-        public Funcionario getFuncionario() {
-            return funcionario;
+
+        public Constable funcionarioFormato() {
+            return funcionario.Formatar();
+        }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+    public void setFuncionario(Funcionario funcionario) {
+            this.funcionario = funcionario;
+
         }
 
         public Bloco getNext() {

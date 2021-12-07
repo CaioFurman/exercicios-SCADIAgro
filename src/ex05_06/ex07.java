@@ -69,8 +69,6 @@ public class ex07 {
                 System.out.println(linha);
 
                 Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
-                listaFuncionarios.Adicionar(funcionario);
-
 
                 //SEM INDEXAÇÃO
 
@@ -84,6 +82,7 @@ public class ex07 {
         registrarDado.close();
         System.out.println(linha);
 
+
         //INDEXAÇÃO POR CÓDIGO
 
 
@@ -96,6 +95,8 @@ public class ex07 {
         LerFuncionario(pathDefault);
         System.out.println(linha2);
 
+        //listaFuncionarios.Imprimir();
+
         System.out.println("Indexação pelo código:\n");
         LerFuncionarioCod(pathCod);
         System.out.println(linha2);
@@ -103,5 +104,6 @@ public class ex07 {
         System.out.println("Indexação pelo nome:\n");
         LerFuncionarioNome(pathNome);
         System.out.println(linha2);
+
     }
 }

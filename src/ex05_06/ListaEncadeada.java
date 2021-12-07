@@ -13,7 +13,7 @@ public class ListaEncadeada {
         this.primeiro = primeiro;
     }
 
-    public Bloco getPUltimo() {
+    public Bloco getUltimo() {
         return ultimo;
     }
 
@@ -42,8 +42,15 @@ public class ListaEncadeada {
         if (primeiro == null) {
             primeiro = bloco;
         }
-        tamanho++;
     }
 
+    public void Imprimir() {
+        Bloco bloco = primeiro;
+
+        while (bloco != null) {
+            System.out.println(bloco.funcionarioFormato());
+            bloco = bloco.getNext();
+        }
+    }
 
 }
