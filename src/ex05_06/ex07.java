@@ -43,7 +43,7 @@ public class ex07 {
         FileWriter registrarDado = new FileWriter(pathDefault);
         FileWriter registrarDadoCodigo = new FileWriter(pathCod);
         FileWriter registrarDadoNome = new FileWriter(pathNome);
-        LinkedList<Funcionario> listaEncadeada = new LinkedList<>();
+        ListaEncadeada listaFuncionarios = new ListaEncadeada();
         Scanner scanner = new Scanner(System.in);
 
         do {
@@ -71,7 +71,7 @@ public class ex07 {
                 System.out.println(linha);
 
                 Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
-                listaEncadeada.offer(funcionario);
+                listaFuncionarios.Adicionar(funcionario);
 
 
                 //SEM INDEXAÇÃO
@@ -88,31 +88,8 @@ public class ex07 {
 
         //INDEXAÇÃO POR CÓDIGO
 
-        try {
-            CodComparar ordemCod = new CodComparar();
-            listaEncadeada.sort(ordemCod);
-            ListIterator<Funcionario> iteradorCod = listaEncadeada.listIterator();
-            while (iteradorCod.hasNext()){
-                registrarDadoCodigo.write(String.valueOf(iteradorCod.next()));
-            }
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-        registrarDadoCodigo.close();
 
         //INDEXAÇÃO POR NOME
-
-        try {
-            NomeComparar ordemNome = new NomeComparar();
-            listaEncadeada.sort(ordemNome);
-            ListIterator<Funcionario> iteradorNome = listaEncadeada.listIterator();
-            while (iteradorNome.hasNext()){
-                registrarDadoNome.write(String.valueOf(iteradorNome.next()));
-            }
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-        registrarDadoNome.close();
 
 
         //Exercício 7

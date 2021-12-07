@@ -7,9 +7,6 @@ import java.util.Comparator;
 
 public class Funcionario implements Serializable {
 
-        public static String path = "./src/ex05_06/funcionario.dat";
-        public static String separador = " / ";
-
         int codFuncionario;
         String nome;
         double valorSalario;
@@ -53,13 +50,13 @@ public class Funcionario implements Serializable {
 
 
     public String toString() {
-        String stringSalario = (String.format("%013.2f", valorSalario));
-        stringSalario = stringSalario.replace(",",".");
+            double dCodFuncionario = codFuncionario;
+        String strFuncionario = (String.format("%06.0f", dCodFuncionario));
+        String strSalario = (String.format("%016.2f", valorSalario));
+        String strNome = String.format("%-100s", nome);
+        strSalario = strSalario.replace(",",".");
         StringBuffer buffer = new StringBuffer();
-        buffer.append(codFuncionario).append(separador);
-        buffer.append(nome).append(separador);
-        buffer.append(stringSalario).append(separador);
-        buffer.append(dataAdmissao).append("\n");;
+        buffer.append(strFuncionario).append(strNome).append(strSalario).append(dataAdmissao).append("\n");;
 
         return buffer.toString();
     }
