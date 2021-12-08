@@ -118,6 +118,6 @@ public class ex07 {
                 case 8:
                     break;
             }
-        } while (opcaoEscolhida != 6);
+        } while (opcaoEscolhida != 8);
     }
 }
