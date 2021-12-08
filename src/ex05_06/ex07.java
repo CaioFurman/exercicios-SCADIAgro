@@ -85,7 +85,9 @@ public class ex07 {
         3 - Média dos salários
         4 - Maior e menor salário
         5 - Lista completa de funcionários
-        6 - Fechar""");
+        6 - Lista ordenada por código
+        7 - Lista ordenada por nome
+        8 - Fechar""");
         opcaoEscolhida = scanner.nextInt();
 
             switch (opcaoEscolhida) {
@@ -110,6 +112,10 @@ public class ex07 {
                     break;
 
                 case 6:
+
+                case 7:
+
+                case 8:
                     break;
             }
         } while (opcaoEscolhida != 6);
