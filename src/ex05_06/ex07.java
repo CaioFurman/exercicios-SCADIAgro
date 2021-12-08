@@ -18,15 +18,12 @@ package ex05_06;
 //- indexada pelo Nome
 
 import static ex05_06.LeitorDados.LerFuncionario;
-import static ex05_06.LeitorDados.LerFuncionarioCod;
-import static ex05_06.LeitorDados.LerFuncionarioNome;
 
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import java.util.Scanner;
 
 public class ex07 {
@@ -36,7 +33,6 @@ public class ex07 {
         String pathNome = "./src/ex05_06/funcionario_idx02.idx";
         int codFuncionario;
         String linha = "\n-------------";
-        String linha2 = "-------------";
 
         FileWriter registrarDado = new FileWriter(pathDefault);
         FileWriter registrarDadoCodigo = new FileWriter(pathCod);
@@ -70,8 +66,6 @@ public class ex07 {
 
                 Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
 
-                //SEM INDEXAÇÃO
-
             try{
                 registrarDado.write(String.valueOf(funcionario));
             } catch (IOException e){
@@ -80,30 +74,44 @@ public class ex07 {
 
         } while (codFuncionario != 0);
         registrarDado.close();
-        System.out.println(linha);
+        listaFuncionarios = LerFuncionario(pathDefault);
+        int opcaoEscolhida;
 
+        do {
+        System.out.println("\n----- Escolha uma opção -----");
+        System.out.println("""
+        1 - Total de funcionários
+        2 - Soma dos salários
+        3 - Média dos salários
+        4 - Maior e menor salário
+        5 - Lista completa de funcionários
+        6 - Fechar""");
+        opcaoEscolhida = scanner.nextInt();
 
-        //INDEXAÇÃO POR CÓDIGO
+            switch (opcaoEscolhida) {
+                case 1:
+                    listaFuncionarios.TotalFuncionarios();
+                    break;
 
+                case 2:
+                    listaFuncionarios.SomaSalarios();
+                    break;
 
-        //INDEXAÇÃO POR NOME
+                case 3:
+                    listaFuncionarios.MediaSalarios();
+                    break;
 
+                case 4:
+                    listaFuncionarios.MMSalarios();
+                    break;
 
-        //Exercício 7
-        System.out.println("7 - C) Fazer a listagem dos dados dos clientes:");
-        System.out.println("Sem indexação:\n");
-        LerFuncionario(pathDefault);
-        System.out.println(linha2);
+                case 5:
+                    listaFuncionarios.Listar();
+                    break;
 
-        //listaFuncionarios.Imprimir();
-
-        System.out.println("Indexação pelo código:\n");
-        LerFuncionarioCod(pathCod);
-        System.out.println(linha2);
-
-        System.out.println("Indexação pelo nome:\n");
-        LerFuncionarioNome(pathNome);
-        System.out.println(linha2);
-
+                case 6:
+                    break;
+            }
+        } while (opcaoEscolhida != 6);
     }
 }

@@ -34,7 +34,6 @@ public class LeitorDados {
             Funcionario funcionario = new Funcionario(codFuncionario, nome, valorSalario, dataAdmissao);
             listaFuncionarios.Adicionar(funcionario);
         }
-        listaFuncionarios.Imprimir();
         return listaFuncionarios;
     }
 
@@ -42,6 +41,7 @@ public class LeitorDados {
         LeitorDados.pathCod = pathCod;
         File f = new File(pathCod);
         Scanner s = new Scanner(f);
+
 
         return null;
     }

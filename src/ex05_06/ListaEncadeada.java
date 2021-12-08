@@ -31,6 +31,10 @@ public class ListaEncadeada {
         return tamanho;
     }
 
+    public void setTamanho(int tamanho) {
+        this.tamanho = tamanho;
+    }
+
     public void Adicionar(Funcionario funcionario) {
         Bloco bloco = new Bloco(funcionario);
         bloco.setPrev(ultimo);
@@ -44,13 +48,36 @@ public class ListaEncadeada {
         }
     }
 
-    public void Imprimir() {
-        Bloco bloco = primeiro;
+    public void TotalFuncionarios() {
+        System.out.println("\nTotal de funcionários: "+tamanhoLista());
+    }
 
+    public void SomaSalarios() {
+        Bloco bloco = primeiro;
+        double somaSalario = 0;
+
+        System.out.println("\nSoma dos salários: "+somaSalario);
+    }
+
+    public void MediaSalarios() {
+        System.out.println("\nMedia dos salários: ");
+    }
+
+    public void MMSalarios() {
+        System.out.println("\nMaior salário: ");
+        System.out.println("\nMenor salário: ");
+    }
+
+    public void Listar() {
+        Bloco bloco = primeiro;
+        System.out.println();
         while (bloco != null) {
             System.out.println(bloco.funcionarioFormato());
             bloco = bloco.getNext();
         }
     }
 
+    public Bloco Ordenar(Funcionario funcionario) {
+         return null;
+    }
 }

@@ -61,7 +61,7 @@ public class Funcionario implements Serializable {
         strSalario = strSalario.replace(",",".");
 
         StringBuffer buffer = new StringBuffer();
-        buffer.append(strFuncionario).append(strNome).append(strSalario).append(dataAdmissao).append("\n");;
+        buffer.append(strFuncionario).append(strNome).append(strSalario).append(dataAdmissao).append("\n");
 
         return buffer.toString();
     }
