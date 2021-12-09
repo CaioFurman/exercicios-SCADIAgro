@@ -1,10 +1,11 @@
 package ex05_06;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Comparator;
-
+import java.io.FileWriter;
 
 public class Funcionario implements Serializable {
 
@@ -36,21 +37,21 @@ public class Funcionario implements Serializable {
             return dataAdmissao;
         }
 
-        public static class CodComparar implements Comparator<Funcionario> {
-            @Override
-            public int compare(Funcionario f1, Funcionario f2)
-            {
-                return Integer.compare(f1.getCodFuncionario(), f2.getCodFuncionario());
-            }
+    public static class CodComparar implements Comparator<Funcionario> {
+        @Override
+        public int compare(Funcionario f1, Funcionario f2)
+        {
+            return Integer.compare(f1.getCodFuncionario(), f2.getCodFuncionario());
         }
+    }
 
-        public static class NomeComparar implements Comparator<Funcionario> {
-            @Override
-            public int compare(Funcionario f1, Funcionario f2)
-            {
-                return f1.getNome().compareTo(f2.getNome());
-            }
+    public static class NomeComparar implements Comparator<Funcionario> {
+        @Override
+        public int compare(Funcionario f1, Funcionario f2)
+        {
+            return f1.getNome().compareTo(f2.getNome());
         }
+    }
 
 
     public String toString() {
@@ -83,5 +84,16 @@ public class Funcionario implements Serializable {
             buffer.append(" dias\n");
 
         return buffer.toString();
+    }
+
+    public String SalvarNome() throws IOException {
+        String pathNome = "./src/ex05_06/funcionario_idx02.idx";
+        FileWriter registrarDadoNome = new FileWriter(pathNome);
+        try{
+            registrarDadoNome.write("teste");
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }

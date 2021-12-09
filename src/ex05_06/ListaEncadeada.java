@@ -1,9 +1,11 @@
 package ex05_06;
 
+import java.io.IOException;
+
 public class ListaEncadeada {
     private Bloco primeiro, ultimo;
     Bloco bloco = primeiro;
-    int tamanho = 0;
+    private int tamanho = 0;
 
     public Bloco getPrimeiro() {
         return primeiro;
@@ -55,8 +57,19 @@ public class ListaEncadeada {
     public void SomaSalarios() {
         Bloco bloco = primeiro;
         double somaSalario = 0;
+        double f1 = bloco.getFuncionario().getValorSalario();
+        do {
+            double f2 = bloco.getNext().getFuncionario().getValorSalario();
 
-        System.out.println("\nSoma dos salários: "+somaSalario);
+            somaSalario = f1 + f2;
+            f1 = somaSalario;
+
+            bloco = bloco.getNext();
+
+        } while (bloco.getNext() != null);
+        String resultadoSomaSalario = String.format("%.2f", somaSalario);
+        System.out.println("\nSoma dos salários: R$" + resultadoSomaSalario);
+
     }
 
     public void MediaSalarios() {
@@ -77,7 +90,35 @@ public class ListaEncadeada {
         }
     }
 
-    public Bloco Ordenar(Funcionario funcionario) {
-         return null;
+    public void ListaNome() {
+        Funcionario temp;
+        bloco = primeiro;
+
+         do {
+            if (bloco.getFuncionario().getNome().compareTo(bloco.getNext().getFuncionario().getNome()) > 0) {
+                temp = bloco.getFuncionario();
+                bloco.setFuncionario(bloco.getNext().getFuncionario());
+                bloco.getNext().setFuncionario(temp);
+            }
+            bloco = bloco.getNext();
+         } while  (bloco.getNext() != null);
+
+        Listar();
+    }
+
+    public void ListaCodigo() {
+        Funcionario temp;
+        bloco = primeiro;
+
+        do {
+            if (bloco.getFuncionario().getCodFuncionario() > bloco.getNext().getFuncionario().getCodFuncionario()) {
+                temp = bloco.getFuncionario();
+                bloco.setFuncionario(bloco.getNext().getFuncionario());
+                bloco.getNext().setFuncionario(temp);
+            }
+            bloco = bloco.getNext();
+        } while  (bloco.getNext() != null);
+
+        Listar();
     }
 }

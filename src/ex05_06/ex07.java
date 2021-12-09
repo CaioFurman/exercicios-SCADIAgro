@@ -85,8 +85,8 @@ public class ex07 {
         3 - Média dos salários
         4 - Maior e menor salário
         5 - Lista completa de funcionários
-        6 - Lista ordenada por código
-        7 - Lista ordenada por nome
+        6 - Lista ordenada por nome
+        7 - Lista ordenada por código
         8 - Fechar""");
         opcaoEscolhida = scanner.nextInt();
 
@@ -112,8 +112,12 @@ public class ex07 {
                     break;
 
                 case 6:
+                    listaFuncionarios.ListaNome();
+                    break;
 
                 case 7:
+                    listaFuncionarios.ListaCodigo();
+                    break;
 
                 case 8:
                     break;
