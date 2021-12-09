@@ -54,26 +54,29 @@ public class ListaEncadeada {
         System.out.println("\nTotal de funcionários: "+tamanhoLista());
     }
 
-    public void SomaSalarios() {
+    public double SomarSalarios() {
         Bloco bloco = primeiro;
-        double somaSalario = 0;
-        double f1 = bloco.getFuncionario().getValorSalario();
+        double totalSoma = bloco.getFuncionario().getValorSalario();
         do {
-            double f2 = bloco.getNext().getFuncionario().getValorSalario();
-
-            somaSalario = f1 + f2;
-            f1 = somaSalario;
+            double nextFuncionario = bloco.getNext().getFuncionario().getValorSalario();
+            totalSoma = totalSoma + nextFuncionario;
 
             bloco = bloco.getNext();
 
         } while (bloco.getNext() != null);
-        String resultadoSomaSalario = String.format("%.2f", somaSalario);
-        System.out.println("\nSoma dos salários: R$" + resultadoSomaSalario);
 
+        return totalSoma;
+    }
+
+    public void SomaSalarios() {
+        String resultadoSomaSalario = String.format("%.2f", SomarSalarios());
+        System.out.println("\nSoma dos salários: R$" + resultadoSomaSalario);
     }
 
     public void MediaSalarios() {
-        System.out.println("\nMedia dos salários: ");
+        double mediaSalario = SomarSalarios() / tamanhoLista();
+        String resultadoMediaSalario = String.format("%.2f", mediaSalario);
+        System.out.println("\nMedia dos salários: R$" + resultadoMediaSalario);
     }
 
     public void MMSalarios() {
