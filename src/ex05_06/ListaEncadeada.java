@@ -1,5 +1,6 @@
 package ex05_06;
 
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class ListaEncadeada {
@@ -93,9 +94,11 @@ public class ListaEncadeada {
         }
     }
 
-    public void ListaNome() {
+    public void ListaNome() throws IOException {
         Funcionario temp;
         bloco = primeiro;
+        String pathNome = "./src/ex05_06/funcionario_idx02.idx";
+        FileWriter registrarDadoNome = new FileWriter(pathNome);
 
          do {
             if (bloco.getFuncionario().getNome().compareTo(bloco.getNext().getFuncionario().getNome()) > 0) {
@@ -103,15 +106,32 @@ public class ListaEncadeada {
                 bloco.setFuncionario(bloco.getNext().getFuncionario());
                 bloco.getNext().setFuncionario(temp);
             }
+
+            try{
+                registrarDadoNome.write(String.valueOf(bloco.getFuncionario()));
+            } catch (IOException e){
+                e.printStackTrace();
+            }
             bloco = bloco.getNext();
+
          } while  (bloco.getNext() != null);
+
+         try{
+            registrarDadoNome.write(String.valueOf(bloco.getFuncionario()));
+            registrarDadoNome.close();
+         } catch (IOException e){
+            e.printStackTrace();
+         }
+
 
         Listar();
     }
 
-    public void ListaCodigo() {
+    public void ListaCodigo() throws IOException {
         Funcionario temp;
         bloco = primeiro;
+        String pathCod = "./src/ex05_06/funcionario_idx01.idx";
+        FileWriter registrarDadoCodigo = new FileWriter(pathCod);
 
         do {
             if (bloco.getFuncionario().getCodFuncionario() > bloco.getNext().getFuncionario().getCodFuncionario()) {
@@ -119,8 +139,23 @@ public class ListaEncadeada {
                 bloco.setFuncionario(bloco.getNext().getFuncionario());
                 bloco.getNext().setFuncionario(temp);
             }
+
+            try{
+                registrarDadoCodigo.write(String.valueOf(bloco.getFuncionario()));
+            } catch (IOException e){
+                e.printStackTrace();
+            }
             bloco = bloco.getNext();
+
         } while  (bloco.getNext() != null);
+
+        try{
+            registrarDadoCodigo.write(String.valueOf(bloco.getFuncionario()));
+            registrarDadoCodigo.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
 
         Listar();
     }

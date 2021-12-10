@@ -29,14 +29,10 @@ import java.util.Scanner;
 public class ex07 {
     public static void main(String[] args) throws IOException {
         String pathDefault = "./src/ex05_06/funcionario.dat";
-        String pathCod = "./src/ex05_06/funcionario_idx01.idx";
-        String pathNome = "./src/ex05_06/funcionario_idx02.idx";
+        FileWriter registrarDado = new FileWriter(pathDefault);
         int codFuncionario;
         String linha = "\n-------------";
 
-        FileWriter registrarDado = new FileWriter(pathDefault);
-        FileWriter registrarDadoCodigo = new FileWriter(pathCod);
-        FileWriter registrarDadoNome = new FileWriter(pathNome);
         ListaEncadeada listaFuncionarios = new ListaEncadeada();
         Scanner scanner = new Scanner(System.in);
 
