@@ -51,10 +51,8 @@ public class ex07 {
                 double valorSalario = scanner.nextDouble();
                 scanner.nextLine();
 
-
                 System.out.println("\nData de Admissão: (yyyy-MM-dd)");
                 String dataInput = scanner.nextLine();
-
                 DateTimeFormatter dataFormato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate dataAdmissao = LocalDate.parse(dataInput, dataFormato);
 

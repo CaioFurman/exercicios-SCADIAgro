@@ -80,9 +80,49 @@ public class ListaEncadeada {
         System.out.println("\nMedia dos salários: R$" + resultadoMediaSalario);
     }
 
+    public double MaiorSalario() {
+        Bloco bloco = primeiro;
+        double maiorSalario = 0;
+        do {
+            double salarioFuncionario = bloco.getFuncionario().getValorSalario();
+            if (maiorSalario < salarioFuncionario) {
+                maiorSalario = salarioFuncionario;
+            }
+            bloco = bloco.getNext();
+        } while (bloco.getNext() !=null);
+
+        double salarioFuncionario = bloco.getFuncionario().getValorSalario();
+        if (maiorSalario < salarioFuncionario) {
+            maiorSalario = salarioFuncionario;
+        }
+
+        return maiorSalario;
+    }
+
+    public double MenorSalario() {
+        Bloco bloco = primeiro;
+        double menorSalario = Double.MAX_VALUE;
+        do {
+            double salarioFuncionario = bloco.getFuncionario().getValorSalario();
+            if (menorSalario > salarioFuncionario) {
+                menorSalario = salarioFuncionario;
+            }
+            bloco = bloco.getNext();
+        } while (bloco.getNext() !=null);
+
+        double salarioFuncionario = bloco.getFuncionario().getValorSalario();
+        if (menorSalario > salarioFuncionario) {
+            menorSalario = salarioFuncionario;
+        }
+
+        return menorSalario;
+    }
+
     public void MMSalarios() {
-        System.out.println("\nMaior salário: ");
-        System.out.println("\nMenor salário: ");
+        String resultadoMaiorSalario = String.format("%.2f", MaiorSalario());
+        String resultadoMenorSalario = String.format("%.2f", MenorSalario());
+        System.out.println("\nMaior salário: R$"+resultadoMaiorSalario);
+        System.out.println("\nMenor salário: R$"+resultadoMenorSalario);
     }
 
     public void Listar() {
@@ -96,7 +136,7 @@ public class ListaEncadeada {
 
     public void ListaNome() throws IOException {
         Funcionario temp;
-        bloco = primeiro;
+        Bloco bloco = primeiro;
         String pathNome = "./src/ex05_06/funcionario_idx02.idx";
         FileWriter registrarDadoNome = new FileWriter(pathNome);
 
@@ -122,7 +162,6 @@ public class ListaEncadeada {
          } catch (IOException e){
             e.printStackTrace();
          }
-
 
         Listar();
     }
@@ -155,7 +194,6 @@ public class ListaEncadeada {
         } catch (IOException e){
             e.printStackTrace();
         }
-
 
         Listar();
     }
