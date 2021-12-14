@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListasController">
+   <children>
+      <ImageView fitHeight="502.0" fitWidth="713.0" layoutX="185.0" layoutY="-1.0" opacity="0.7" pickOnBounds="true">
+         <image>
+            <Image url="@wallpaperbranco.png" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="500.0" prefWidth="189.0">
+         <children>
+            <Button alignment="CENTER" cache="true" mnemonicParsing="false" onAction="#SelecionarCadastro" prefHeight="76.0" prefWidth="189.0" style="-fx-background-color: #555;" text="Cadastro" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#SelecionarSalarios" prefHeight="76.0" prefWidth="189.0" style="-fx-background-color: #555;" text="Salários" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="76.0" prefWidth="189.0" style="-fx-background-color: #449ad4;" text="Listas" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" disable="true" mnemonicParsing="false" prefHeight="195.0" prefWidth="189.0" style="-fx-background-color: #000;" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#Sair" prefHeight="76.0" prefWidth="189.0" style="-fx-background-color: #555;" text="Sair" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="405.0" layoutY="28.0" prefHeight="36.0" prefWidth="282.0" text="Listas" textFill="#449ad4">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnLista" layoutX="296.0" layoutY="243.0" mnemonicParsing="false" onAction="#MostrarLista" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #555;" text="Mostrar lista" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnListaNome" layoutX="296.0" layoutY="409.0" mnemonicParsing="false" onAction="#MostrarListaNome" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #555;" text="Ordenada por Nome" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnListaCodigo" layoutX="296.0" layoutY="324.0" mnemonicParsing="false" onAction="#MostrarListaCodigo" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #555;" text="Ordenada por Código" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextArea fx:id="rtbLista" layoutX="542.0" layoutY="87.0" prefHeight="378.0" prefWidth="282.0">
+         <font>
+            <Font name="SimSun" size="20.0" />
+         </font>
+      </TextArea>
+      <Label alignment="CENTER" layoutX="279.0" layoutY="108.0" prefHeight="21.0" prefWidth="183.0" text="Total de funcionários" textFill="#555555">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" alignment="CENTER" layoutX="279.0" layoutY="144.0" prefHeight="21.0" prefWidth="183.0" text="0" textFill="#449ad4">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
