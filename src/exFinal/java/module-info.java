@@ -1,4 +1,4 @@
-module s.java.fxapp {
+module controllers {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -10,6 +10,6 @@ module s.java.fxapp {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens s.java.fxapp to javafx.fxml;
-    exports s.java.fxapp;
+    opens controllers to javafx.fxml;
+    exports controllers;
 }
